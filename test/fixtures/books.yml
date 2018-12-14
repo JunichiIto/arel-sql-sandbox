@@ -1,0 +1,11 @@
+alice_book:
+  author: alice
+  title: Alice's Book
+
+allen_book:
+  author: allen
+  title: Allen's Book
+
+bob_book:
+  author: bob
+  title: Bob's book
