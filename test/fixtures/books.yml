@@ -1,11 +1,14 @@
 alice_book:
-  author: alice
   title: Alice's Book
+  author_name: Alice
+  author_email: foo@example.com
 
 allen_book:
-  author: allen
   title: Allen's Book
+  author_name: ALLEN
+  author_email: bar@example.com
 
 bob_book:
-  author: bob
   title: Bob's book
+  author_name: Bob
+  author_email: zzz@example.com
