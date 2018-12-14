@@ -28,6 +28,7 @@ class BookTest < ActiveSupport::TestCase
   end
 
   test ".order_by_param" do
+    # https://rails-sqli.org/
     sql = <<~SQL
       CASE WHEN SUBSTR(books.author_email, 1, 1) = 'z' THEN 0 ELSE 1 END
     SQL
