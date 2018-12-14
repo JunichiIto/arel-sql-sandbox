@@ -1,4 +1,6 @@
 class Blog < ApplicationRecord
+  belongs_to :user
+
   scope :order_by_title, -> { order(:title) }
   scope :order_by_title_desc, -> { order(title: :desc) }
   scope :order_by_title_sql, -> { order("blogs.title") }
