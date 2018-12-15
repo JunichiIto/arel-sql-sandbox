@@ -39,7 +39,7 @@ class BookTest < ActiveSupport::TestCase
           1
       END
     SQL
-    assert_equal [@bob_book, @alice_book, @allen_book], Book.order_by_param(sql)
+    assert_equal @bob_book, Book.order_by_param(sql).first
   end
 
   test ".order_by_param_with_arel_sql" do
@@ -51,7 +51,7 @@ class BookTest < ActiveSupport::TestCase
           1
       END
     SQL
-    assert_equal [@bob_book, @alice_book, @allen_book], Book.order_by_param_with_arel_sql(sql)
+    assert_equal @bob_book, Book.order_by_param_with_arel_sql(sql).first
   end
 
   ALLOWED_ATTRIBUTES = %w(title author_name).freeze
@@ -62,7 +62,7 @@ class BookTest < ActiveSupport::TestCase
     text
   end
 
-  test '.validate_order_by' do
+  test '#validate_order_by' do
     text = 'title'
     order_by = validate_order_by(text)
     assert_equal [@allen_book, @alice_book, @bob_book], Book.order(Arel.sql(order_by))
