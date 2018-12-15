@@ -6,5 +6,6 @@ class BooksController < ApplicationController
       else
         Book.order(params[:order_by])
       end
+    head :ok
   end
 end

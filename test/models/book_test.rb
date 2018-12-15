@@ -32,14 +32,24 @@ class BookTest < ActiveSupport::TestCase
 
     # https://rails-sqli.org/
     sql = <<~SQL
-      CASE WHEN SUBSTR(books.author_email, 1, 1) = 'x' THEN 0 ELSE 1 END
+      CASE SUBSTR(books.author_email, 1, 1)
+        WHEN 'x' THEN
+          0
+        ELSE
+          1
+      END
     SQL
     assert_equal [@bob_book, @alice_book, @allen_book], Book.order_by_param(sql)
   end
 
   test ".order_by_param_with_arel_sql" do
     sql = <<~SQL
-      CASE WHEN SUBSTR(books.author_email, 1, 1) = 'x' THEN 0 ELSE 1 END
+      CASE SUBSTR(books.author_email, 1, 1)
+        WHEN 'x' THEN
+          0
+        ELSE
+          1
+      END
     SQL
     assert_equal [@bob_book, @alice_book, @allen_book], Book.order_by_param_with_arel_sql(sql)
   end
