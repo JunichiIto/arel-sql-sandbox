@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Sample codes for [Arel\.sqlを付けるだけじゃダメ\!? Railsで"Dangerous query method …”の警告が出たときの対応方法 \- Qiita](https://qiita.com/jnchito/items/5f2f00c93c0ba68e4d31)
 
-Things you may want to cover:
+## How to run tests
 
-* Ruby version
+```
+bundle install
+rails db:migrate
+rails test
+```
 
-* System dependencies
+## License
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+MIT License.
